@@ -97,13 +97,17 @@ var Plyr2 = Backbone.Model.extend({
 		//set video format type
 		this.set(options);
 		console.log(this);
-		this.set( 'format', this.getFormat(this.get('url')) );
+		var url =this.get('url');
+		if(!_.isUndefined(url))this.set( 'format', this.getFormat(this.get('url')) );
+		else this.set( 'format', this.getFormat(this.get('url_dep')) );
 	},
 	
 	getFormat : function(url)
 	{
 		//separated to make it easier to isolate and update this list
 		var format = '';
+		
+		
 		if( url.match(/^http:\/\/(?:www\.)?youtube.com\/watch\?(?=.*v=\w+)(?:\S+)?$/) ) format = 'youtube'
 		else if ( url.match(/^http:\/\/(?:www\.)?vimeo.com\/(.*)/) ) format = 'vimeo'
 		else format = 'html5';
