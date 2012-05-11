@@ -29,6 +29,8 @@ $loader->registerNamespaces(array(
     'Nelmio'                        => __DIR__.'/../vendor/bundles',
     'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-fixtures/lib',
     'Doctrine\\Common' => __DIR__.'/../vendor/doctrine-common/lib',
+    'Knp'              => __DIR__.'/../vendor/bundles',
+    'Buzz'             => __DIR__.'/../vendor/Buzz/lib'
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
