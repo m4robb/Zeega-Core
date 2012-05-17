@@ -170,7 +170,7 @@
     target=/bundles/Sensio/Bundle/BuzzBundle
 
 [KnpOAuthBundle]
-    git=https://luisbrandao@github.com/luisbrandao/KnpOAuthBundle.git
+    git=https://github.com/luisbrandao/KnpOAuthBundle.git
     target=/bundles/Knp/Bundle/OAuthBundle
 	version=v2.0
 ; ---------------------------------------------
