@@ -31,9 +31,9 @@ security:
                 access_token_url:  https://github.com/login/oauth/access_token
                 infos_url:         https://github.com/api/v2/json/user/show
                 username_path:     user.login
-                client_id:         <your_oauth_client_id>
-                secret:            <your_oauth_secret>
-                scope:             <your_oauth_scope>
+                client_id:         c10151a6bd0e4829b562
+                secret:            769b6a6f7d765b6488b851355cba6d45ab7ed97e
+                scope:             login
                 check_path:        /secured/login_check
                 login_path:        /secured/login
         search:
