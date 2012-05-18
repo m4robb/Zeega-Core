@@ -10,6 +10,9 @@ ZeegaAdminBundle:
     resource: "@ZeegaAdminBundle/Resources/config/routing.yml"
     prefix:   /
 
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+
 # Internal routing configuration to handle ESI
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"

@@ -180,4 +180,30 @@ class User extends BaseUser
     {
         return $this->sites;
     }
+    /**
+     * @var string $google_id
+     */
+    private $google_id;
+
+
+    /**
+     * Set google_id
+     *
+     * @param string $googleId
+     */
+    public function setGoogleId($googleId)
+    {
+        $this->google_id = $googleId;
+        return $this;
+    }
+
+    /**
+     * Get google_id
+     *
+     * @return string 
+     */
+    public function getGoogleId()
+    {
+        return $this->google_id;
+    }
 }

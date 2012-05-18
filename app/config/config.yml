@@ -128,16 +128,22 @@ fos_user:
             template: ZeegaUserBundle:Email:resetting.email.twig
 
 hwi_oauth:
+    connect: ~
     resource_owners:
-        any_name:
+        google:
             type:                google
-            client_id:           <client_id>
-            client_secret:       <client_secret>
-            scope:               ""
+            client_id:           %google_id%
+            client_secret:       %google_secret%
+            scope:               https://www.googleapis.com/auth/userinfo.email
+            paths:
+                email: email
+                profilepicture: picture
     fosub:
         username_iterations: 30
         properties:
-            google: google_ke           
+            google: google_key
+    firewall_name: secured_area
+
 nelmio_solarium:
     adapter:
         class: Solarium_Client_Adapter_Http
