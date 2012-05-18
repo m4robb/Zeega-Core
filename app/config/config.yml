@@ -126,6 +126,13 @@ fos_user:
     resetting:
         email:
             template: ZeegaUserBundle:Email:resetting.email.twig
+hwi_oauth:
+    resource_owners:
+        any_name:
+            type:                google
+            client_id:           <client_id>
+            client_secret:       <client_secret>
+            scope:               ""
             
 nelmio_solarium:
     adapter:

@@ -1,6 +1,6 @@
 security:
     factories:
-        - "%kernel.root_dir%/../vendor/bundles/Knp/Bundle/OAuthBundle/Resources/config/security_factories.xml"    
+        - "%kernel.root_dir%/../vendor/bundles/HWI/Bundle/OAuthBundle/Resources/config/security_factory.xml"
     encoders:
         FOS\UserBundle\Model\UserInterface: sha512
         
@@ -26,16 +26,16 @@ security:
                 target: /login
             anonymous: ~
             oauth:
-                oauth_provider:    oauth
-                authorization_url: https://github.com/login/oauth/authorize
-                access_token_url:  https://github.com/login/oauth/access_token
-                infos_url:         https://github.com/api/v2/json/user/show
-                username_path:     user.login
-                client_id:         c10151a6bd0e4829b562
-                secret:            769b6a6f7d765b6488b851355cba6d45ab7ed97e
-                scope:             login
-                check_path:        /secured/login_check
-                login_path:        /secured/login
+                resource_owners:
+                    facebook:           "/login/check-facebook"
+                    google:             "/login/check-google"
+                    my_custom_provider: "/login/check-custom"
+                    my_github:          "/login/check-github"
+                login_path:        /login
+                failure_path:      /login
+
+                oauth_user_provider:
+                    service: hwi_oauth.user.provider.fosub_bridge
         search:
             pattern: ^/api/search
             anonymous: ~
