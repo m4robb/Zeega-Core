@@ -141,7 +141,7 @@ hwi_oauth:
     fosub:
         username_iterations: 30
         properties:
-            google: google_key
+            google: google_id
     firewall_name: secured_area
 
 nelmio_solarium:
