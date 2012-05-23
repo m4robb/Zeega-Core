@@ -191,7 +191,7 @@ class User extends BaseUser
      *
      * @param string $googleId
      */
-    public function setGoogleId($googleId)
+    public function setGoogle_id($googleId)
     {
         $this->google_id = $googleId;
         return $this;
@@ -202,7 +202,7 @@ class User extends BaseUser
      *
      * @return string 
      */
-    public function getGoogleId()
+    public function getGoogle_id()
     {
         return $this->google_id;
     }

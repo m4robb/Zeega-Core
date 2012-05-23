@@ -27,12 +27,9 @@ security:
             anonymous: ~
             oauth:
                 resource_owners:
-                    facebook:           "/login/check-facebook"
                     google:             "/service/google"
-                    my_custom_provider: "/login/check-custom"
-                    my_github:          "/login/check-github"
-                login_path:        /login
-                failure_path:      /login
+                login_path:        /login/
+                failure_path:      /login/oauth
 
                 oauth_user_provider:
                     service: hwi_oauth.user.provider.fosub_bridge
@@ -43,8 +40,10 @@ security:
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
         #- { path: ^/_internal, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }
+        - { path: ^/login/oauth, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/connect, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/registration, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/[0-9]+, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/loginoauth$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: ROLE_ADMIN }
         - { path: ^/register/confirmed, role: ROLE_ADMIN }

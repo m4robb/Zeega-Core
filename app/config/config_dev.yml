@@ -6,7 +6,7 @@ framework:
     profiler: { only_exceptions: false }
 
 web_profiler:
-    toolbar: true
+    toolbar: false
     intercept_redirects: false
     verbose: true
     
@@ -21,7 +21,7 @@ monolog:
         main:
             type:  stream
             path:  %kernel.logs_dir%/%kernel.environment%.log
-            level: debug
+            level: info
 
 assetic:
     use_controller: true

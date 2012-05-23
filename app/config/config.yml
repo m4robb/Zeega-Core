@@ -134,7 +134,7 @@ hwi_oauth:
             type:                google
             client_id:           %google_id%
             client_secret:       %google_secret%
-            scope:               https://www.googleapis.com/auth/userinfo.email
+            scope:               https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email
             paths:
                 email: email
                 profilepicture: picture
