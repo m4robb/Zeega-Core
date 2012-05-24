@@ -137,33 +137,14 @@
 										<li><a data-search-filter='video' href='#'>Video</a></li>
 									</ul>
 								</div>
-								<!--
-								<div id="searchbar">
-									
-									<div id='search-filter'>
-											<a class='menu-toggle' href='#'><i class='zicon-search-dropdown'></i></a>
-											<ul class='unstyled menu-items'>
-												<li class='menu-title'>Filter by Format</li>
-												<li class='divider'></li>
-												<li><a data-search-filter='all' href='#'>All</a></li>
-												<li><a data-search-filter='audio' href='#'>Audio</a></li>
-												<li><a data-search-filter='image' href='#'>Images</a></li>
-												<li><a data-search-filter='video' href='#'>Video</a></li>
-											</ul>
-									</div>
-									
-									<input id='database-search-text' type='text' name='database-search' placeholder='search database'/>
-									
-								</div>
-								-->
-							
+								
 							</div>
 							
 							<div class='panel-content'>
 								<div id="db-nav-controls">
 									
 									<select id='database-collection-filter' class=''>
-									  <option value="all">All Collections</option>
+									  <option value="all">My Collections</option>
 									</select>
 									
 									<a href='#' id='grid-view'><span class='zicon zicon-grid orange'></span></a>
@@ -262,10 +243,6 @@
 			</div>
 		</div> <!-- modal -->
 		
-		
-		
-		
-		
 		<div id="frame-item-template" class="">
 			<div class='frame-overlay'>
 				<div class='frame-update-overlay'></div>
@@ -281,10 +258,14 @@
 
 			<script type="text/javascript" language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 			<script src="http://s3.documentcloud.org/viewer/loader.js"></script>
-
-			<script src="{{ asset('js/lib/require.js') }}" data-main="{{ asset('js/loaders/editor.js') }}"></script>
+			
+			<!-- to load JS libraries separately -->
+			<!-- <script src="{{ asset('js/lib/require.js') }}" data-main="{{ asset('js/loaders/editor.js') }}"></script>-->
+			<!-- to load single aggregated JS library --> 
+			<script src="{{ asset('js/lib/require.js') }}" data-main="{{ asset('/web/js_min/editor.js') }}"></script>
 
 			<script src="{{ asset('js/lib/jquery.tagsinput.min.js')}}"></script>
+
 			<link rel="stylesheet" type="text/css" href="{{ asset('js/lib/jquery.tagsinput.css')}}" />
 
 			<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>

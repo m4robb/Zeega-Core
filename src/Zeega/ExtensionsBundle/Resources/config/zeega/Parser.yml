@@ -36,6 +36,11 @@ zeega.parsers:
             regex: /http:\/\/(?:www\.)?soundcloud.com.*/
             is_set: false
             parser_class: Zeega\ExtensionsBundle\Parser\Soundcloud\ParserSoundcloudItem
+    dp.la:
+        set_parser:
+            regex: /http:\/\/(?:api\.)?dp.la\/.*/
+            is_set: true
+            parser_class: Zeega\ExtensionsBundle\Parser\DPLA\ParserDPLASet
     mapbox.com:
         item_parser:
             regex: "#https?:\/\/(?:tiles\.)?mapbox.*\/([^/]+/map/[^/]+)#"
@@ -56,3 +61,9 @@ zeega.parsers:
             regex: /http:\/\/(?:www\.)?documentcloud.org\/documents.*/
             is_set: false
             parser_class: Zeega\ExtensionsBundle\Parser\DocumentCloud\ParserDocumentCloud
+
+    tumblr.com:
+        item_parser:
+            regex: /http:\/\/([a-zA-Z0-9\-_]+).tumblr.com\/post\/([a-zA-Z0-9\-_]+)/
+            is_set: false
+            parser_class: Zeega\ExtensionsBundle\Parser\Tumblr\ParserTumblr
